@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Editor Point and click adventure</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Daniel, Mauro, Victor">
+        <meta name="description" content="Prototipo de um editor de point and click adventure">
+        <meta name="keywords" content="Point and click adiventure, editor, SMD">
+        <link rel="stylesheet" href="estilo.css">
+        <script src="https://kit.fontawesome.com/01ec1a1789.js" crossorigin="anonymous"></script>
+        <style>
+        </style>
+        </head>
+        <body>
+            <section class="scene-menu">
+                <h1>Cenas</h1>
+                <div class="conteiner-scene">
+                    
+                    <ul>
+                        <li> Cena 1</li>
+                        <li> Cena 2</li>
+                        <li> Cena 3</li>
+                        <li> Cena 4</li>
+                    </ul>
+                </div>
+                <div class="conteiner-button">
+                    <button class="button" type="button" onclick="alert('adicionar')" >Adicionar</button>
+                    <button class="button" type="button" onclick="alert('Remover')" >Remover</button>
+                    <button class="button" type="button" onclick="alert('Editar')" >Editar</button>
+                </div>
+            </section>
+            <section>
+                <form action="/action_page.php">
+                    <label for="firt-scene">Cena inicial</label>
+                    <select name="firt-scene" id="firt-scene">
+                        <option value="scene-1">cena 1</option>
+                        <option value="scene-2">cena 2</option>
+                        <option value="scene-3">cena 3</option>
+                    </select>
+                </form>
+                    <button class="button" type="button" onclick="alert('Executar')" >Executar</button>
+                    <button class="button" type="button" onclick="alert('Exportar')" >Exportar</button>
+                    <button class="button" type="button" onclick="alert('Importar')" >Importar</button>
+
+
+            </section>
+
+
+        </body>
+</html>   
