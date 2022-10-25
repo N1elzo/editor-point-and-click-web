@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="estilo.css">
         <script src="https://kit.fontawesome.com/01ec1a1789.js" crossorigin="anonymous"></script>
         <style>
+            
         </style>
         </head>
         <body>
@@ -29,22 +30,27 @@
                     <button class="button" type="button" onclick="alert('Editar')" >Editar</button>
                 </div>
             </section>
-            <section>
-                <form action="/action_page.php">
-                    <label for="firt-scene">Cena inicial</label>
-                    <select name="firt-scene" id="firt-scene">
-                        <option value="scene-1">cena 1</option>
-                        <option value="scene-2">cena 2</option>
-                        <option value="scene-3">cena 3</option>
-                    </select>
-                </form>
-                    <button class="button" type="button" onclick="alert('Executar')" >Executar</button>
-                    <button class="button" type="button" onclick="alert('Exportar')" >Exportar</button>
-                    <button class="button" type="button" onclick="alert('Importar')" >Importar</button>
+            <section class="first-scene">
+                <h1>Primeira Cena</h1>
+                <div class="conteiner-first-scene">
+                    <div class="dropdown">
+                        <select name="" id="">
+                            <option value="0">Selecione ...</option>
+                            <option value="1">Cena 1</option>
+                            <option value="2">Cena 2</option>
+                            <option value="3">Cena 3</option>
+                        </select>
 
+                        </div>
+                    </div>
+                    <div class="conteiner-button">
+                        <button class="button" type="button" onclick="alert('Executar')" >Executar</button>
+                        <button class="button" type="button" onclick="alert('Exportar')" >Exportar</button>
+                        <button class="button" type="button" onclick="alert('Importar')" >Importar</button>
+                    </div>       
 
             </section>
 
-
+                   
         </body>
 </html>   
