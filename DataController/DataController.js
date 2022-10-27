@@ -1,4 +1,4 @@
-import Frame from './Frame.js';
+import Frame from './Utils/Frame';
 
 class DataController {
     // Base class for manager objects in app
