@@ -23,6 +23,10 @@ class HotSpot {
 
         return ( colX && colY );
     }
+
+    getDataInJSON(){
+        return {"nextFrame" : this.nextFrame, "x":this.x, "y":this.y, "w":this.w, "h":this.h };
+    }
 }
 
 // exports.HotSpot = HotSpot;

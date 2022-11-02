@@ -39,10 +39,25 @@ class Frame {
         }
     }
 
-    saveState() { //Idea
+    getDataInJSON() { //Idea
         // Need be tested and testes with a backend controller
         // return curently frame to a parent controller
-        return this;
+
+        const hotSpots = Array()
+
+        for ( let hS of this.hotSpotList ){
+            if ( hS instanceof HotSpot ){
+                hotSpots.push(hS.getDataInJSON());
+            }
+        }
+
+        const frameData = {
+            "name" : this.name,
+            "image" : this.image,
+            "hotSpots" : hotSpots
+        }
+
+        return frameData;
     }
 }
 

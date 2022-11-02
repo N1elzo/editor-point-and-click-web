@@ -1,4 +1,5 @@
-import Frame from './Utils/Frame';
+import Frame from './Utils/Frame.js';
+import { writeFile } from 'fs';
 
 class DataController {
     // Base class for manager objects in app
@@ -10,7 +11,6 @@ class DataController {
     // -----------------------------------------------------
 
     constructor() {} // empty constructor
-
 
     // Frames manipultaion methods -------------------------
     
@@ -30,6 +30,10 @@ class DataController {
         if ( indexToRemove >= 0 && indexToRemove < this.#frames.length) {
             const removedFrame = this.#frames.splice(indexToRemove, 1);
 
+            if ( indexToRemove == this.#mainFrameIndex ){
+                this.#mainFrameIndex = -1 // reset index of main frame
+            }
+
             return removedFrame || null;
         }
 
@@ -48,7 +52,31 @@ class DataController {
         return this.#mainFrameIndex;
     }
 
-    // -----------------------------------------------------
+    // Save data methods -----------------------------------
+
+    saveJSON(filename, gameName, authorName) {
+        // store all data of frames in a json object and create a file 
+
+        const framesToSave = Array()
+
+        for ( let frame of this.#frames ) {
+            if ( frame instanceof Frame ){
+                const frameData = frame.getDataInJSON();
+                framesToSave.push(frameData);
+            }
+        }
+
+        const fileData = {
+            "name" : String(gameName),
+            "author" : String(authorName) || "",
+            "mainScene" : this.#mainFrameIndex,
+            "scenes": framesToSave
+        }
+
+        writeFile( filename + ".json", JSON.stringify(fileData, null, 2), (err) => {
+            if ( err ) console.error(err)
+        })
+    }
 
 }
 
